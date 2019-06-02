@@ -22,8 +22,8 @@ class Application
       end
     end
 
-  elsif req.path.match(/add/)
-      search_term = req.params["item"]
+  elsif req.path.match(/add/)                   # new route called /add
+      search_term = req.params["item"]          # that takes in a GET param with the key item
       if @@items.include?(search_term)
          @@cart << search_term
          resp.write "added #{search_term}"
